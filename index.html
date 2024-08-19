@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム画像表示</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 100px; /* 文字のサイズを100pxに設定 */
+        }
+        button {
+            font-size: 100px; /* ボタンのサイズを100pxに設定 */
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+        img {
+            width: 1500px; /* 画像の幅を1500pxに設定 */
+            height: auto; /* 高さを自動調整 */
+            margin-top: 500px; /* ボタンとの間を500pxに設定 */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>ランダムに選ばれた画像</h1>
+    <button onclick="showRandomImage()">画像を表示する</button>
+    <br><br>
+    <img id="randomImage" src="" alt="ランダム画像がここに表示されます" style="display:none;">
+    
+    <script>
+        // 画像ファイル名のリストを作成
+        const images = [
+            'image1.jpg',
+            'image2.jpg',
+            'image3.jpg',
+            'image4.jpg',
+            'image5.jpg',
+            'image6.jpg',
+            'image7.jpg',
+            'image8.jpg',
+            'image9.jpg',
+            'image10.jpg',
+            'image11.jpg',
+            'image12.jpg',
+            'image13.jpg',
+            'image14.jpg'
+        ];
+
+        // ボタンが押されたときに画像を表示する関数
+        function showRandomImage() {
+            // ランダムに画像を選択
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const selectedImage = images[randomIndex];
+
+            // 選ばれた画像を表示
+            const imageElement = document.getElementById('randomImage');
+            imageElement.src = `images/${selectedImage}`;
+            imageElement.style.display = 'block'; // 画像を表示
+        }
+    </script>
+</body>
+</html>
